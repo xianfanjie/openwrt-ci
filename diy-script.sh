@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "开始执行DIY"
+
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.0.1/g' package/base-files/files/bin/config_generate
 
@@ -127,3 +129,5 @@ sed -i 's/TARGET_CFLAGS.*/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+echo "DIY执行结束"
